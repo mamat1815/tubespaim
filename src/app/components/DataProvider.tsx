@@ -116,7 +116,7 @@ export const HospitalProvider: React.FC<HospitalProviderProps> = ({ children }) 
         patient_name: string;
         patient_dob: string;
         allergies: string;
-        doctorName: string;
+        doctor_name: string;
         items: Array<{
             medicineId: string;
             name: string;
@@ -130,7 +130,7 @@ export const HospitalProvider: React.FC<HospitalProviderProps> = ({ children }) 
                 patient_name: data.patient_name,
                 patient_dob: data.patient_dob,
                 allergies: data.allergies,
-                doctor_name: data.doctorName,
+                doctor_name: data.doctor_name,
                 items: data.items.map(item => ({
                     medicine_id: item.medicineId,
                     name: item.name,

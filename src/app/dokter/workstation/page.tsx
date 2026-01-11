@@ -22,7 +22,7 @@ export default function DokterWorkstationPage() {
     const [newPatientAllergies, setNewPatientAllergies] = useState('');
 
     const filteredMedicines = medicines.filter(m =>
-        m.name.toLowerCase().includes(searchTerm.toLowerCase())
+        m.medicine_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     const addToCart = () => {
@@ -30,7 +30,7 @@ export default function DokterWorkstationPage() {
 
         let medToAdd = selectedMed;
         if (!medToAdd) {
-            medToAdd = medicines.find(m => m.name.toLowerCase() === searchTerm.toLowerCase());
+            medToAdd = medicines.find(m => m.medicine_name.toLowerCase() === searchTerm.toLowerCase());
         }
         if (!medToAdd) return alert("Obat tidak ditemukan!");
         if (!signa) return alert("Isi aturan pakai!");
@@ -50,7 +50,7 @@ export default function DokterWorkstationPage() {
                 patient_name: selectedPatient.name,
                 patient_dob: selectedPatient.dob,
                 allergies: selectedPatient.allergies,
-                doctorName: 'Dr. Izzati Muhimmah',
+                doctor_name: 'Dr. Izzati Muhimmah',
                 items: cart.map(item => ({
                     medicineId: item.id,
                     name: item.name,
@@ -256,11 +256,11 @@ export default function DokterWorkstationPage() {
                                                                 key={m.id}
                                                                 className="p-2.5 hover:bg-indigo-50 cursor-pointer text-sm border-b border-slate-50 last:border-0"
                                                                 onClick={() => {
-                                                                    setSearchTerm(m.name);
+                                                                    setSearchTerm(m.medicine_name);
                                                                     setSelectedMed(m);
                                                                 }}
                                                             >
-                                                                <div className="font-bold text-slate-900">{m.name}</div>
+                                                                <div className="font-bold text-slate-900">{m.medicine_name}</div>
                                                                 <div className="text-xs text-slate-600 flex justify-between mt-1">
                                                                     <span>{m.location}</span>
                                                                     <span className={m.stock < 10 ? 'text-red-500 font-bold' : 'text-green-600'}>Stok: {m.stock}</span>

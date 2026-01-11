@@ -2,7 +2,7 @@
 
 export interface Medicine {
     id: string;
-    name: string;
+    medicine_name: string;
     type: string;
     stock: number;
     price: number;
@@ -50,7 +50,7 @@ export interface Log {
     id: number;
     date: string;
     type: string;
-    medicineName: string;
+    medicine_name: string;
     qty: number;
     ref: string;
     pic: string;
@@ -85,7 +85,7 @@ export interface HospitalContextType {
         patient_name: string;
         patient_dob: string;
         allergies: string;
-        doctorName: string;
+        doctor_name: string;
         items: Array<{
             medicineId: string;
             name: string;

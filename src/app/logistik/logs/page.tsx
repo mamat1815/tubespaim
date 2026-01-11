@@ -43,7 +43,7 @@ export default function LogistikLogsPage() {
                                                 {log.type}
                                             </span>
                                         </td>
-                                        <td className="p-4 font-medium text-slate-800">{log.medicineName}</td>
+                                        <td className="p-4 font-medium text-slate-800">{log.medicine_name}</td>
                                         <td className="p-4 text-center">
                                             <span className="bg-slate-100 px-3 py-1 rounded text-xs font-bold">{log.qty}</span>
                                         </td>

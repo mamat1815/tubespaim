@@ -15,7 +15,7 @@ export const INITIAL_PRESCRIPTIONS: Prescription[] = [
         patient_name: 'Budi Santoso',
         patient_dob: '1985-04-12',
         allergies: 'Tidak ada',
-        doctorName: 'Dr. Izzati Muhimmah',
+        doctor_name: 'Dr. Izzati Muhimmah',
         date: '2025-06-14',
         status: 'Selesai',
         totalPrice: 50000,
