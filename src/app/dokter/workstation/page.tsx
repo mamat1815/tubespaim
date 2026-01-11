@@ -57,8 +57,7 @@ export default function DokterWorkstationPage() {
                     qty: item.qty,
                     price: item.price,
                     signa: item.signa
-                })),
-                totalPrice: cart.reduce((acc, i) => acc + (i.price * i.qty), 0)
+                }))
             });
 
             setCart([]);
@@ -139,7 +138,7 @@ export default function DokterWorkstationPage() {
                                             className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-slate-900 placeholder-slate-400"
                                             value={newPatientAllergies}
                                             onChange={(e) => setNewPatientAllergies(e.target.value)}
-                                            placeholder="Kosongkan jika tidak ada"
+                                            // placeholder="Kosongkan jika tidak ada"
                                         />
                                     </div>
 

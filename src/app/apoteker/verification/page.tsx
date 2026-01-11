@@ -53,7 +53,7 @@ export default function ApotekerVerificationPage() {
                                             )}
                                         </div>
                                         <div className="text-right">
-                                            <div className="text-sm text-slate-500">Dr. {p.doctorName}</div>
+                                            <div className="text-sm text-slate-500">Dr. {p.doctor_name}</div>
                                             <div className="text-sm text-slate-500">{p.date}</div>
                                         </div>
                                     </div>
@@ -85,7 +85,7 @@ export default function ApotekerVerificationPage() {
 
                                     <div className="mt-6 flex justify-between items-center pt-4 border-t border-slate-200">
                                         <div className="text-lg font-bold text-slate-800">
-                                            Total: {formatCurrency(p.totalPrice)}
+                                            Total: {formatCurrency(p.total_price)}
                                         </div>
                                         <button
                                             onClick={() => handleProcess(p.id)}
