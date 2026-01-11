@@ -2,7 +2,7 @@
 
 export interface Medicine {
     id: string;
-    medicine_name: string;
+    name: string;
     type: string;
     stock: number;
     price: number;

@@ -13,7 +13,7 @@ export default function LogistikInventoryPage() {
     const [restockAmount, setRestockAmount] = useState(0);
     const [isAddOpen, setIsAddOpen] = useState(false);
     const [newMed, setNewMed] = useState({
-        medicine_name: '',
+        name: '',
         type: '',
         stock: 0,
         price: 0,
@@ -35,7 +35,7 @@ export default function LogistikInventoryPage() {
     };
 
     const handleCreate = async () => {
-        if (!newMed.medicine_name || !newMed.type || !newMed.location || !newMed.expiry) {
+        if (!newMed.name || !newMed.type || !newMed.location || !newMed.expiry) {
             alert('Lengkapi data obat (nama, tipe, lokasi, kadaluarsa)');
             return;
         }
@@ -47,7 +47,7 @@ export default function LogistikInventoryPage() {
             });
             alert('Obat berhasil ditambahkan');
             setIsAddOpen(false);
-            setNewMed({ medicine_name: '', type: '', stock: 0, price: 0, expiry: '', location: '' });
+            setNewMed({ name: '', type: '', stock: 0, price: 0, expiry: '', location: '' });
         } catch (err) {
             alert('Gagal menambah obat');
         }
@@ -86,7 +86,7 @@ export default function LogistikInventoryPage() {
                             {medicines.map(m => (
                                 <tr key={m.id} className={`hover:bg-slate-50 ${m.stock < 10 ? 'bg-red-50' : ''}`}>
                                     <td className="p-4 font-mono text-slate-600">{m.id}</td>
-                                    <td className="p-4 font-medium text-slate-800">{m.medicine_name}</td>
+                                    <td className="p-4 font-medium text-slate-800">{m.name}</td>
                                     <td className="p-4 text-slate-600">{m.type}</td>
                                     <td className="p-4 text-center">
                                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${m.stock < 10 ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
@@ -179,8 +179,8 @@ export default function LogistikInventoryPage() {
                                     <label className="text-sm font-semibold text-slate-900 mb-1 block">Nama Obat</label>
                                     <input
                                         className="w-full p-3 border border-slate-300 rounded-lg text-slate-900"
-                                        value={newMed.medicine_name}
-                                        onChange={(e) => setNewMed({ ...newMed, medicine_name: e.target.value })}
+                                        value={newMed.name}
+                                        onChange={(e) => setNewMed({ ...newMed, name: e.target.value })}
                                         placeholder="cth: Paracetamol 500mg"
                                     />
                                 </div>
